@@ -36,7 +36,7 @@ Imagine that you have a budget of \$100. The price of $x$ is \$1 and the price o
 
 You have the following utility function
 
-$$U(x,y) = x^a y^b$$, 
+$$U(x,y) = x^a y^b$$
 
 with $a = 0.5$ and $b=0.5$
 
@@ -65,16 +65,16 @@ First save in a new vector two Cobb-Douglas models using `cobbs_douglas_utility(
 model1 = cobbs_douglas_utility(I = 100, px = 1, py = 1)
 ```
 
-In your second model the price of $y$ has increase to \$ 2
+In your second model the prices of $x,y$ have increase to \$ 2
 
 ```{r}
-model2 = cobbs_douglas_utility(I = 100, px = 1, py = 2)
+model2 = cobbs_douglas_utility(I = 100, px = 2, py = 2)
 ```
 
 In your third model your budget has increased to 120.
 
 ```{r}
-model3 = cobbs_douglas_utility(I = 120, px = 1, py = 1.2)
+model3 = cobbs_douglas_utility(I = 120, px = 2, py = 2)
 ```
 
 

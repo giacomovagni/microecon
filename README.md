@@ -34,7 +34,7 @@ price of $y$ is also \$1.
 
 You have the following utility function
 
-$$U(x,y) = x^a y^b$$,
+$$U(x,y) = x^a y^b$$
 
 with $a = 0.5$ and $b=0.5$
 
@@ -44,7 +44,7 @@ You can use the function as follow
 model1 = cobbs_douglas_utility(I = 100, px = 1, py = 1, a = 0.5, b = 0.5)
 ```
 
-![](vignette_github_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 The function retrieves various elements such as the `optimal bundle`,
 the maximum utility given the budget `max_U`, and the predicted values
@@ -83,32 +83,26 @@ First save in a new vector two Cobb-Douglas models using
 model1 = cobbs_douglas_utility(I = 100, px = 1, py = 1)
 ```
 
-![](vignette_github_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
-
-In your second model the price of $y$ has increase to \$ 2
+In your second model the prices of $x,y$ have increase to \$ 2
 
 ``` r
-model2 = cobbs_douglas_utility(I = 100, px = 1, py = 2)
+model2 = cobbs_douglas_utility(I = 100, px = 2, py = 2)
 ```
-
-![](vignette_github_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 In your third model your budget has increased to 120.
 
 ``` r
-model3 = cobbs_douglas_utility(I = 120, px = 1, py = 1.2)
+model3 = cobbs_douglas_utility(I = 120, px = 2, py = 2)
 ```
 
-![](vignette_github_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
-
-You can then visualize the two models with
+You can then visualize the models with
 
 ``` r
 cb_models = cobbs_douglas_models(model1, model2, model3)
 cb_models$fig
 ```
 
-![](vignette_github_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ------------------------------------------------------------------------
 
