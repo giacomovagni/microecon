@@ -23,15 +23,14 @@ cobb_douglas_mult = function(a, px, I){
 #
 
 # 4 goods #
-I = 100
-a = c(0.1, 0.1, 0.4, 0.4)
-sum(a)
-#
-px = c(1,1,2,2)
+#I = 100
+#a = c(0.1, 0.1, 0.4, 0.4)
+#sum(a)
+#px = c(1,1,2,2)
 #
 
 #
-cobb_douglas_mult(a = a, px = px, I = I)
+#cobb_douglas_mult(a = a, px = px, I = I)
 #
 
 ###########################################################################
@@ -40,21 +39,21 @@ cobb_douglas_mult(a = a, px = px, I = I)
 # you can go back to 2 goods by removing the extra-goods from the Budget
 
 # let's focus on good x3 and x4
-I_new = 100 - ((20*2) + (20*2))
+#I_new = 100 - ((20*2) + (20*2))
 # new budget
-I_new
+#I_new
 #
 
 ###########################################################################
 ###########################################################################
 
 # x3 and x4
-I = I_new
-a = c(0.4, 0.4) # keep the same alpha values
-px = c(2,2) # keep the same prices
+#I = I_new
+#a = c(0.4, 0.4) # keep the same alpha values
+#px = c(2,2) # keep the same prices
 #
-cobb_douglas_mult(a = a, px = px, I = I_new)
+#cobb_douglas_mult(a = a, px = px, I = I_new)
 # we can plot a bivariate plot for x3 and x4
-cobbs_douglas_utility(I = I_new, a = 0.4, b = 0.4, px = 2, py = 2)$optimal_bundle
+#cobbs_douglas_utility(I = I_new, a = 0.4, b = 0.4, px = 2, py = 2)$optimal_bundle
 #
 

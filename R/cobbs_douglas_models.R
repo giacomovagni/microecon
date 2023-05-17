@@ -8,10 +8,6 @@
 #
 
 #
-g(model1, model2, model3, ymax = 150, xmax = 120)
-#
-
-#
 cobbs_douglas_models = function(..., ymax = 120, xmax = 120){
 
   n = list(...)
