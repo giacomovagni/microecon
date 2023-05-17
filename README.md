@@ -31,7 +31,7 @@ constraint optimization for two goods $x$ and $y$.
 
 Imagine that you have a budget of \$100. 
 
-The price of $x$ is \$1 and the price of $y$ is also \$1.
+The price of $x$ is 1 dollar and the price of $y$ is also 1 dollar.
 
 You have the following utility function
 
