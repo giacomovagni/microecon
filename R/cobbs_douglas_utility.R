@@ -39,8 +39,7 @@ f_budget_y = function(x,px,py, I) (I - x*px)/py
 #' @returns A list.
 #' @examples
 #' cobbs_douglas_utility(I=100, a=0.5, b=0.5, px = 1, py = 2)
-#' cobbs_douglas_utility(I=100, a=0.4, b=0.5, px = 1.2, py = 2)
-
+#' cobbs_douglas_utility(I=1000, a=0.4, b=0.3, px = 1.2, py = 1.4)
 
 # general function to solve a Cobbs-Douglas Utility function #
 cobbs_douglas_utility = function(I, a=0.5, b=0.5, px, py){
@@ -72,33 +71,45 @@ cobbs_douglas_utility = function(I, a=0.5, b=0.5, px, py){
   #
 
   #
-  df = data.frame(x, y = f_cobbs_y(x, U = max_U, a = a, b = b), max_U) %>% mutate(Budget = x*px+y*py)
+  df = data.frame(x, y, yU = f_cobbs_y(x, U = max_U, a = a, b = b), max_U) %>% mutate(Budget = x*px+yU*py)
   # we can see that we are over our budget
   head(df) #
   # we retrieve the row which respect our budget
   # because I am using rounded values, we are not exactly at 100, but very close
   w = which.min(df$Budget - I)
-  df[w, ]
+  # df[w, ]
   # the optimal combination maximising utility
   # is 23 = x, and 15.5 = y
   # which respect our budget of $100
-  #
-
-  # this is our budget line, given the prices of x and y #
-  plot(x,y, type = "l", xlim = c(0,x_max), ylim = c(0,y_max))
-  abline(h=0,v=0, col = 'gray')
-  lines(x, y_Umax, type = 'l', col = 'red')
-  abline(h = df[w, ]$y, v = df[w, ]$x, col = 'blue')
   #
 
   #
   optimal_bundle = df[w, ]
   #
 
+  p1 = round(optimal_bundle$max_U,1)
+  p2 = round(optimal_bundle$x,1)
+  p3 = round(optimal_bundle$y,1)
+  plab = paste("Optimal Bundle (", p2, ",", p3, ")", " Max Utility = ", p1, sep = '')
+
+  #
+  fig = df %>%
+    ggplot(aes(x,y)) +
+    geom_line() +
+    geom_hline(yintercept = optimal_bundle$y, alpha = 0.6, linetype = 2) +
+    geom_vline(xintercept = optimal_bundle$x, alpha = 0.6, linetype = 2) +
+    xlim(c(0,x_max+10)) +
+    ylim(c(0,y_max+10)) +
+    theme_minimal() +
+    geom_line(aes(x, yU), col = 'red') +
+    annotate(geom = "text", x = -Inf, y = Inf, label = plab, vjust = 2, hjust = 0)
+
   #
   df = data.frame(x, y, y_Umax)
   #
 
+  fig
+
   #
-  return(list(df = df, x_max = x_max, y_max = y_max, slope = slope, x = x, y = y, y_Umax = y_Umax, U=U, optimal_bundle = optimal_bundle))
+  return(list(df = df, x_max = x_max, y_max = y_max, I = I, a = a, b = b, px = px, py = py, slope = slope, x = x, y = y, y_Umax = y_Umax, U=U, optimal_bundle = optimal_bundle, fig = fig))
 }

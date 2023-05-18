@@ -2,7 +2,8 @@
 % Please edit documentation in R/cobbs_douglas_mult.R
 \name{cobb_douglas_mult}
 \alias{cobb_douglas_mult}
-\title{Solve for Y}
+\title{Calculate the optimal bundle for multiple goods (x1, x2, ...) given a budget constraint.
+\deqn{U(x1,x2,x3, ...) = x_{1}^{a1} \cdot x_{2}^{a2} \cdot x_{3}^{a3} ...}}
 \usage{
 cobb_douglas_mult(a, px, I)
 }
@@ -17,7 +18,8 @@ cobb_douglas_mult(a, px, I)
 A dataframe
 }
 \description{
-Solve for Y
+Calculate the optimal bundle for multiple goods (x1, x2, ...) given a budget constraint.
+\deqn{U(x1,x2,x3, ...) = x_{1}^{a1} \cdot x_{2}^{a2} \cdot x_{3}^{a3} ...}
 }
 \examples{
 # 4 goods

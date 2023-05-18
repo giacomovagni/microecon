@@ -27,5 +27,5 @@ Calculate the optimal bundle for two goods (x and y) given a budget constraint.
 }
 \examples{
 cobbs_douglas_utility(I=100, a=0.5, b=0.5, px = 1, py = 2)
-cobbs_douglas_utility(I=100, a=0.4, b=0.5, px = 1.2, py = 2)
+cobbs_douglas_utility(I=1000, a=0.4, b=0.3, px = 1.2, py = 1.4)
 }
