@@ -57,6 +57,7 @@ cobbs_douglas_utility = function(I, a=0.5, b=0.5, px, py){
   #
 
   x = 0:x_max
+  x[1] = 0.01
   # calculate the values for y that respect the budget #
   y = y_max + (slope * x)
   #
